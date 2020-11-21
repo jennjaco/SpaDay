@@ -9,5 +9,6 @@
   <ItemGroup>
     <Folder Include="Views\Spa\" />
     <Folder Include="Views\User\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 </Project>
