@@ -1,39 +1,42 @@
 ﻿@using SpaDay.ViewModel;
+@model SpaDay.ViewModel.AddUserViewModel;
 
-@model AddUserViewModel;
+
 <h1>Sign Up Form</h1>
-
 
 @if (ViewBag.error != null)
 {
-<p>@ViewBag.error</p>
-}
+<p>@ViewBag.error</p>}
 
 <form method="post" action="/user">
     <br />
-    <div class="form group">
-        <label asp-for="Username">Username</label>
+    <div class="form-group">
+        <label asp-for="Username"></label>
         <input asp-for="Username" />
         <span asp-validation-for="Username"></span>
     </div>
     <br />
-    <div class="form group">
-        <label asp-for="Email">Email</label>
+    <div class="form-group">
+        <label asp-for="Email"></label>
         <input asp-for="Email" />
         <span asp-validation-for="Email"></span>
     </div>
     <br />
-    <div class="form group">
-        <label asp-for="Password">Password</label>
+    <div class="form-group">
+        <label asp-for="Password"></label>
         <input type="password" asp-for="Password" />
         <span asp-validation-for="Password"></span>
     </div>
     <br />
-    <div class="form group">
-        <label asp-for="VerifyPassword">Verify Password</label>
+    <div class="form-group">
+        <label asp-for="VerifyPassword"></label>
         <input type="password" asp-for="VerifyPassword" />
         <span asp-validation-for="VerifyPassword"></span>
     </div>
     <br />
+    <div class="form-group">
+        <label asp-for="Type">Facial Types</label>
+        <select asp-for="Type" asp-items="Model.FacialType"></select>
+    </div>
     <input type="submit" value="Submit" />
 </form>

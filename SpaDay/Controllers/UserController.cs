@@ -21,6 +21,7 @@ namespace SpaDay.Controllers
         public IActionResult Add()
         {
             AddUserViewModel addUserViewModel = new AddUserViewModel();
+
             return View(addUserViewModel);
         }
 
@@ -30,19 +31,18 @@ namespace SpaDay.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User
+                User newUser = new User
                 {
                     Username = addUserViewModel.Username,
                     Email = addUserViewModel.Email,
                     Password = addUserViewModel.Password,
+                    Type = addUserViewModel.Type
                 };
 
-                return View("Index", user);
+                return View("Index", newUser);
             }
 
             return View("Add", addUserViewModel);
-
         }
-
     }
 }

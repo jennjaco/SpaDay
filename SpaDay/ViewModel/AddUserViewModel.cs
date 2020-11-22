@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SpaDay.Models;
 
 namespace SpaDay.ViewModel
@@ -21,5 +23,14 @@ namespace SpaDay.ViewModel
         [Compare("Password", ErrorMessage = "Passwords don't match, dude!")]
         public string VerifyPassword { get; set; }
 
+        public Facials Type { get; set; }
+
+        public List<SelectListItem> FacialType { get; set; } = new List<SelectListItem>
+        {
+            new SelectListItem(Facials.Microdermabrasion.ToString(), ((int)Facials.Microdermabrasion).ToString()),
+            new SelectListItem(Facials.Rejuvenating.ToString(), ((int)Facials.Rejuvenating).ToString()),
+            new SelectListItem(Facials.EnzymePeel.ToString(), ((int)Facials.EnzymePeel).ToString()),
+            new SelectListItem(Facials.Hydrofacial.ToString(), ((int)Facials.Hydrofacial).ToString())
+        };
     }
 }

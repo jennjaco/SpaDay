@@ -1,6 +1,4 @@
 ﻿using System;
-
-
 namespace SpaDay.Models
 {
     public class User
@@ -9,15 +7,18 @@ namespace SpaDay.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
+        public Facials Type { get; set; }
+
         public User()
         {
         }
 
-        public User(string username, string email, string password)
+        public User(string u, string e, string p, Facials t)
         {
-            Username = username;
-            Email = email;
-            Password = password;
+            Username = u;
+            Email = e;
+            Password = p;
+            Type = t;
         }
 
     }
