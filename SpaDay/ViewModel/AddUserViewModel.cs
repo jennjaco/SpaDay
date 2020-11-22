@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using SpaDay.Models;
 
 namespace SpaDay.ViewModel
 {
@@ -16,10 +17,9 @@ namespace SpaDay.ViewModel
         [StringLength(20, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 20 characters.")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage ="Passwords don't match, dude!")]
+        [Required(ErrorMessage = "Please verify your password")]
+        [Compare("Password", ErrorMessage = "Passwords don't match, dude!")]
         public string VerifyPassword { get; set; }
-
-        
 
     }
 }
